@@ -55,4 +55,17 @@ public class Interest {
     public void setAbout(String about) {
         this.about = about;
     }
+
+    @Override
+    public String toString() {
+        return "Interest{" +
+                "id=" + id +
+                ", likes='" + likes + '\'' +
+                ", dislikes='" + dislikes + '\'' +
+                ", hobbies='" + hobbies + '\'' +
+                ", profileUrl='" + profileUrl + '\'' +
+                ", about='" + about + '\'' +
+                '}';
+    }
+
 }

@@ -1,5 +1,7 @@
 package com.dating.model;
 
+import java.util.Objects;
+
 public class UserAccount {
     private int id;
     private String userName;
@@ -12,13 +14,6 @@ public class UserAccount {
     private String country;
     private Interest interest;
 
-    public Interest getInterest() {
-        return interest;
-    }
-
-    public void setInterest(Interest interest) {
-        this.interest = interest;
-    }
 
     public int getId() {
         return id;
@@ -90,5 +85,42 @@ public class UserAccount {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public Interest getInterest() {
+        return interest;
+    }
+
+    public void setInterest(Interest interest) {
+        this.interest = interest;
+    }
+
+    @Override
+    public String toString() {
+        return "UserAccount{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", gender='" + gender + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", interest=" + interest +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserAccount that = (UserAccount) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
